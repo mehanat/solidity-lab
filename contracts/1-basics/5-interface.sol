@@ -33,6 +33,6 @@ contract InterfaceDemo {
     }
 
     receive() external payable {
-        logger.log(msg.sender, _msg.value);
+        logger.log(msg.sender, msg.value);
     }
 }

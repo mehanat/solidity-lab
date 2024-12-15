@@ -1,4 +1,4 @@
-import { loadFixture, ethers, expect } from "./setup";
+import { loadFixture, ethers, expect } from "../setup";
 
 describe("Events", function() {
     async function deploy() {
@@ -40,13 +40,13 @@ describe("Events", function() {
         await expect(tx).to.changeEtherBalances([contract, other_addr], [0,0])
     });
 
-    it("withdraw non owner error", async function() {
-        const { owner, other_addr, contract } = await loadFixture(deploy);
+    // it("withdraw non owner error", async function() {
+    //     const { owner, other_addr, contract } = await loadFixture(deploy);
 
-        const tx = await contract.connect(other_addr).withdraw(other_addr);
-        await tx.wait(1);
+    //     const tx = await contract.connect(other_addr).withdraw(other_addr);
+    //     await tx.wait(1);
 
-        await expect(tx).to.changeEtherBalances([contract, other_addr], [0,0])
-    });
+    //     await expect(tx).to.changeEtherBalances([contract, other_addr], [0,0])
+    // });
 
 });

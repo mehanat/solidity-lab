@@ -1,4 +1,4 @@
-import { loadFixture, ethers, expect } from "./setup";
+import { loadFixture, ethers, expect } from "../setup";
 
 describe("DataTypes", function() {
     async function deploy() {
